@@ -4,7 +4,6 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     dolphin-overlay.url = "github:FUFSoB/dolphin-overlay"; # Change to https://github.com/rumboon/dolphin-overlay later
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     stylix = {
       url = "github:nix-community/stylix/release-25.11";
@@ -20,7 +19,6 @@
       nix-flatpak,
       stylix,
       dolphin-overlay,
-      nix-cachyos-kernel,
       ...
     }@inputs:
     let
@@ -47,7 +45,7 @@
         modules = [
           {
             nixpkgs.config = nixpkgs-options.config;
-            nixpkgs.overlays = [ dolphin-overlay.overlays.default nix-cachyos-kernel.overlays.pinned ];
+            nixpkgs.overlays = [ dolphin-overlay.overlays.default ];
           }
 
           nix-flatpak.nixosModules.nix-flatpak

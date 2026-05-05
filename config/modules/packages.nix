@@ -10,7 +10,7 @@ let
 
   ##############################################################################
   # Package List
-  
+
   packages = with pkgs; {
     misc = [
       bibata-cursors
@@ -18,6 +18,7 @@ let
       pkgs-unstable.nvibrant
       rubik
       where-is-my-sddm-theme
+      ananicy-rules-cachyos
     ];
 
     cli = [
