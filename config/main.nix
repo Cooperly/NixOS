@@ -6,11 +6,9 @@
     ./modules/boot.nix
     ./modules/flatpak.nix
   
-    ./modules/filesystems.nix
     ./modules/stylix.nix
     ./modules/scx.nix
     ./modules/desktop.nix
-    ./modules/dolphin.nix
     ./modules/users.nix
     ./modules/nvidia.nix
     ./modules/nh.nix
@@ -66,6 +64,8 @@
       options = "--delete-older-than 7d";
     };
   };
+
+  
 
   nixpkgs.config.permittedInsecurePackages = ["librewolf-bin-150.0-1" "librewolf-bin-unwrapped-150.0-1"];
 

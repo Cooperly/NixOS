@@ -4,13 +4,10 @@
     jetbrains.idea-oss
 
     # JVM Runtimes.
-    openjdk25
+    graalvmPackages.graalvm-ce
 
     # Build Tools.
     gradle
     maven
-
-    # Decompilers.
-    bytecode-viewer
   ];
 }

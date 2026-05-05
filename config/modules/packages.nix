@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, helium, ... }:
 let
   patch-nixpkgs = patches:
     import (pkgs.applyPatches {
@@ -10,13 +10,14 @@ let
 
   ##############################################################################
   # Package List
-
+  
   packages = with pkgs; {
     misc = [
       bibata-cursors
       xwayland-satellite
       pkgs-unstable.nvibrant
       rubik
+      where-is-my-sddm-theme
     ];
 
     cli = [
@@ -33,7 +34,6 @@ let
       libva-utils
       lm_sensors
       lsof
-      micro
       net-tools
       nvtopPackages.nvidia
       openssl
@@ -73,13 +73,14 @@ let
       mako
       rofi
       libsForQt5.qt5ct
+      aseprite
+      ryubing
     ];
 
     kde = with kdePackages; [
       kalk
       kclock
       kcolorchooser
-      kate
       filelight
       gwenview
       krdc
@@ -97,4 +98,10 @@ in {
     ++ packages.cli
     ++ packages.apps
     ++ packages.kde;
+
+  environment.plasma6.excludePackages = [ 
+    pkgs.kdePackages.okular
+    pkgs.kdePackages.discover
+    pkgs.kdePackages.kate
+  ];
 }
