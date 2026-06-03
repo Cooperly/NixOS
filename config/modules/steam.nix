@@ -12,7 +12,10 @@
     };
 
     package = pkgs.steam.override {
-      extraEnv = {};
+      extraEnv = {
+        # Support for wivrn.
+        PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES = "1";
+      };
 
       extraLibraries = p: with p; [
         atk

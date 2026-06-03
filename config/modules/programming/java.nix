@@ -5,9 +5,10 @@
 
     # JVM Runtimes.
     graalvmPackages.graalvm-ce
+    openjdk25
 
     # Build Tools.
-    gradle
+    gradle_9
     maven
   ];
 }

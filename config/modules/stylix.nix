@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   stylix = {
     enable = true;
     base16Scheme = {
@@ -18,6 +18,27 @@
       base0D = "#89B4FA"; #	blue
       base0E = "#d8c2f2"; #	purple
       base0F = "#fa895c"; #	brown
+    };
+    fonts = {
+      serif = {
+        package = pkgs.rubik;
+        name = "Rubik";
+      };
+
+      sansSerif = {
+        package = pkgs.rubik;
+        name = "Rubik";
+      };
+
+      monospace = {
+        package = pkgs.nerd-fonts._0xproto;
+        name = "0xProto Nerd Font Mono";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
     };
   };
 }

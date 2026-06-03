@@ -3,6 +3,8 @@
   environment.systemPackages = with pkgs; [
     rnnoise-plugin
     lsp-plugins
+    deepfilternet
+    ladspaPlugins
   ];
 
   environment.variables =

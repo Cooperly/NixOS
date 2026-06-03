@@ -1,12 +1,22 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     dolphin-overlay.url = "github:FUFSoB/dolphin-overlay"; # Change to https://github.com/rumboon/dolphin-overlay later
 
+    kopuz = { 
+      url = "github:temidaradev/kopuz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
-      url = "github:nix-community/stylix/release-25.11";
+      url = "github:nix-community/stylix/release-25.11"; # Watch https://github.com/nix-community/stylix for an update to 26.05
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -50,6 +60,7 @@
 
           nix-flatpak.nixosModules.nix-flatpak
           stylix.nixosModules.stylix
+          inputs.nixvim.nixosModules.nixvim
 
           ./config/main.nix
         ];

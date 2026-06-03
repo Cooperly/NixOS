@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, helium, ... }:
+{ inputs, pkgs, pkgs-unstable, ... }:
 let
   patch-nixpkgs = patches:
     import (pkgs.applyPatches {
@@ -14,11 +14,10 @@ let
   packages = with pkgs; {
     misc = [
       bibata-cursors
-      xwayland-satellite
-      pkgs-unstable.nvibrant
-      rubik
-      where-is-my-sddm-theme
+      pkgs-unstable.xwayland-satellite
       ananicy-rules-cachyos
+      playerctl
+      mangohud
     ];
 
     cli = [
@@ -47,6 +46,8 @@ let
       yt-dlp
       fastfetch
       git
+      python312Packages.speedtest-cli
+      wineWow64Packages.full
     ];
 
     apps = [
@@ -54,13 +55,12 @@ let
       alacritty
       bitwarden-desktop
       bs-manager
-      equibop
       gimp
-      libreoffice-qt6
-      obsidian
-      obs-studio
+      # obsidian
       pavucontrol
-      prismlauncher
+      (prismlauncher.override {
+        additionalLibs = [ libxcomposite ];
+      })
       qmmp
       qpwgraph
       teamspeak6-client
@@ -75,7 +75,18 @@ let
       rofi
       libsForQt5.qt5ct
       aseprite
-      ryubing
+      carla
+      inputs.kopuz.packages.${pkgs.stdenv.hostPlatform.system}.default
+      blockbench
+      pkgs-unstable.goofcord
+      pkgs-unstable.osu-lazer-bin 
+      pkgs-unstable.discord
+      heroic
+    ];
+
+    custom = [
+      # (callPackage ./custom-packages/ryubing/package.nix { })
+      (callPackage ./custom-packages/nvibrant/package.nix)
     ];
 
     kde = with kdePackages; [
@@ -91,13 +102,16 @@ let
       knewstuff
       qt6ct
       qtstyleplugin-kvantum
+      kirigami-addons
     ];
   };
 in {
+
   environment.systemPackages = []
     ++ packages.misc
     ++ packages.cli
     ++ packages.apps
+    ++ packages.custom
     ++ packages.kde;
 
   environment.plasma6.excludePackages = [ 

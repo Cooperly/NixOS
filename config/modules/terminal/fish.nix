@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   programs.fish = {
     enable = true;
@@ -6,6 +6,8 @@
   };
 
   users.defaultUserShell = pkgs.fish;
+
+  documentation.man.generateCaches = lib.mkForce false;
 
   environment.shellAliases = {
     # pkill uses similar syntax and kills by process name, not executable name
