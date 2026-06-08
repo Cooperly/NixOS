@@ -16,7 +16,7 @@
     };
 
     stylix = {
-      url = "github:nix-community/stylix/release-25.11"; # Watch https://github.com/nix-community/stylix for an update to 26.05
+      url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

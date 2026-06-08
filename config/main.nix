@@ -7,7 +7,7 @@
     ./modules/flatpak.nix
 
     ./modules/hardware/nvidia.nix
-  
+
     ./modules/ananicy.nix
     ./modules/nix-ld.nix
     ./modules/bespokesynth.nix
@@ -28,6 +28,7 @@
     ./modules/obs.nix
     ./modules/xdg.nix
     ./modules/internationalization.nix
+    ./modules/ssh.nix
 
     ./modules/programming/dotnet.nix
     ./modules/programming/java.nix

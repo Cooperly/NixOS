@@ -48,6 +48,7 @@ let
       git
       python312Packages.speedtest-cli
       wineWow64Packages.full
+      usb-modeswitch
     ];
 
     apps = [
@@ -82,11 +83,13 @@ let
       pkgs-unstable.osu-lazer-bin 
       pkgs-unstable.discord
       heroic
+      blender
+      obsidian
     ];
 
     custom = [
       # (callPackage ./custom-packages/ryubing/package.nix { })
-      (callPackage ./custom-packages/nvibrant/package.nix)
+      (callPackage ./custom-packages/nvibrant/package.nix { })
     ];
 
     kde = with kdePackages; [
@@ -118,5 +121,6 @@ in {
     pkgs.kdePackages.okular
     pkgs.kdePackages.discover
     pkgs.kdePackages.kate
+    pkgs.kdePackages.qrca
   ];
 }

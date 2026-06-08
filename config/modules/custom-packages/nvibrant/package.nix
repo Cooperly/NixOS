@@ -31,14 +31,14 @@ python3Packages.buildPythonApplication (finalAttrs: {
         repo = "nvibrant";
         name = "nvibrant";
         tag = "v${finalAttrs.passthru.nvibrantVersion}";
-        hash = "";
+        hash = "sha256-M83WSQiJwzFZl8ECkZjKigvLTlMkzRa6o2hqPOt1378=";
       };
       open-gpu = fetchFromGitHub {
         owner = "nvidia";
         repo = "open-gpu-kernel-modules";
         name = "open-gpu";
         tag = finalAttrs.passthru.oldestDriverVersion;
-        hash = "";
+        hash = "sha256-MfLR5sYSjBrENWkCChcS9rk1zSlRFfTRpof/4lQ3qow=";
 
         # since .git isn't deterministic, we can't use it to checkout tags in
         # the build phase, so instead we generate patches for each version
@@ -121,7 +121,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
   '';
 
   # replaces code that depends on .git and uses of python -m {ninja,meson}
-  patches = [ ./hatch_build.patch ];
+  patches = [ ./hatch_build.diff ];
 
   configurePhase = ''
     export OLDEST_DRIVER_VERSION=${finalAttrs.passthru.oldestDriverVersion}
