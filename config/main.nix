@@ -8,6 +8,8 @@
 
     ./modules/hardware/nvidia.nix
 
+    ./modules/swap.nix
+
     ./modules/ananicy.nix
     ./modules/nix-ld.nix
     ./modules/bespokesynth.nix

@@ -49,12 +49,12 @@ let
       python312Packages.speedtest-cli
       wineWow64Packages.full
       usb-modeswitch
+      swww
     ];
 
     apps = [
       alcom
       alacritty
-      bitwarden-desktop
       bs-manager
       gimp
       # obsidian
@@ -83,8 +83,8 @@ let
       pkgs-unstable.osu-lazer-bin 
       pkgs-unstable.discord
       heroic
-      blender
       obsidian
+      losslesscut
     ];
 
     custom = [

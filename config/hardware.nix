@@ -26,8 +26,8 @@ in {
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
-  
 
+  boot.zswap.enable = true;
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/042c237a-2141-4aeb-bc71-3628845b6c02";
