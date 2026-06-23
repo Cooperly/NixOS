@@ -4,8 +4,7 @@
     jetbrains.idea-oss
 
     # JVM Runtimes.
-    graalvmPackages.graalvm-ce
-    openjdk25
+    graalvmPackages.graalvm-oracle
 
     # Build Tools.
     gradle_9

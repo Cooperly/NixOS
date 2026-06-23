@@ -45,11 +45,11 @@ let
       whois
       yt-dlp
       fastfetch
-      git
       python312Packages.speedtest-cli
       wineWow64Packages.full
       usb-modeswitch
-      swww
+      awww
+      gnirehtet
     ];
 
     apps = [
@@ -85,6 +85,9 @@ let
       heroic
       obsidian
       losslesscut
+      protonplus
+      r2modman
+      chromium
     ];
 
     custom = [

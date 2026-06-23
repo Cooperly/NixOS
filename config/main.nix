@@ -31,6 +31,7 @@
     ./modules/xdg.nix
     ./modules/internationalization.nix
     ./modules/ssh.nix
+    ./modules/git.nix
 
     ./modules/programming/dotnet.nix
     ./modules/programming/java.nix
