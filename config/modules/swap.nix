@@ -4,7 +4,7 @@
     {
       device = "/var/swapfile";
       priority = 1;
-      size = 16 * 1024;
+      size = 32 * 1024;
     }
   ];
 }
