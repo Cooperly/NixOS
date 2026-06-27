@@ -88,11 +88,13 @@ let
       protonplus
       r2modman
       chromium
+      blender
     ];
 
     custom = [
       # (callPackage ./custom-packages/ryubing/package.nix { })
       (callPackage ./custom-packages/nvibrant/package.nix { })
+      (callPackage ./custom-packages/hd2-arsenal/package.nix { })
     ];
 
     kde = with kdePackages; [
