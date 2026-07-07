@@ -4,7 +4,7 @@
 
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.latest;
-    open = true;
+    open = false;
     videoAcceleration = true;
     modesetting.enable = true;
     forceFullCompositionPipeline = false;

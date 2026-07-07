@@ -1,15 +1,7 @@
 { pkgs, lib, ... }:
 {
   boot = {
-    kernelPackages = pkgs.linuxPackagesFor (pkgs.linuxKernel.kernels.linux_zen.override {
-      structuredExtraConfig = with lib.kernel; {
-        EXPERT = yes;
-        PREEMPT_RT = yes;
-        PREEMPT_VOLUNTARY = lib.mkForce no;
-        RT_GROUP_SCHED = no;
-        NTSYNC = yes;
-      };
-    });
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
 
     loader = {
       efi.canTouchEfiVariables = true;
@@ -31,7 +23,7 @@
             sortKey = "z_windows";
           };
 
-          # TWO represents an HDD being connected and the TX20U Plus acting like a storage device simultaneously
+          # TWO represents an HDD being connected and the TX20U Plus acting like a storage device simultaneously (such as when power goes out.)
           "11-dash-TWO" = {
             title = "Dash10-TWO";
             efiDeviceHandle = "FS2";

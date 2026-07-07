@@ -63,6 +63,7 @@
         "https://nix-community.cachix.org"
         "https://devenv.cachix.org"
         "https://kopuz.cachix.org"
+        "https://attic.xuyh0120.win/lantian"
       ];
 
       trusted-public-keys = [
@@ -71,6 +72,7 @@
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
         "cache.nixos-cuda.org:74DUi4Ye579gUqzH4ziL9IyiJBlDpMRn9MBN8oNan9M="
         "kopuz.cachix.org-1:J2X3AnAYhKTJW5S3aCLoA1ckonQXVNZMQvhZA0YAufw="
+        "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       ];
     };
 
