@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   boot = {
-    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
 
     loader = {
       efi.canTouchEfiVariables = true;

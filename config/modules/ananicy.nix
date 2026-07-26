@@ -1,7 +1,13 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
-    rulesProvider = pkgs.ananicy-rules-cachyos;
+    rulesProvider = pkgs-unstable.ananicy-rules-cachyos;
+    extraRules = [
+      {
+        "name" = "fossilize_replay";
+        "nice" = 19;
+      }
+    ];
   };
 }

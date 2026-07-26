@@ -1,4 +1,4 @@
-{ inputs, pkgs, pkgs-unstable, ... }:
+{ inputs, pkgs, pkgs-unstable, helium, ... }:
 let
   patch-nixpkgs = patches:
     import (pkgs.applyPatches {
@@ -15,7 +15,6 @@ let
     misc = [
       bibata-cursors
       pkgs-unstable.xwayland-satellite
-      ananicy-rules-cachyos
       playerctl
       mangohud
     ];
@@ -50,6 +49,7 @@ let
       usb-modeswitch
       awww
       gnirehtet
+      tmux
     ];
 
     apps = [
@@ -81,7 +81,9 @@ let
       blockbench
       pkgs-unstable.goofcord
       pkgs-unstable.osu-lazer-bin 
-      pkgs-unstable.discord
+      (pkgs-unstable.discord.override {
+        withVencord = true; 
+      })
       heroic
       obsidian
       losslesscut
@@ -89,12 +91,14 @@ let
       r2modman
       chromium
       blender
+      tetrio-desktop
+      vinegar
     ];
 
     custom = [
       # (callPackage ./custom-packages/ryubing/package.nix { })
       (callPackage ./custom-packages/nvibrant/package.nix { })
-      (callPackage ./custom-packages/hd2-arsenal/package.nix { })
+      # (callPackage ./custom-packages/hd2-arsenal/package.nix { })
     ];
 
     kde = with kdePackages; [

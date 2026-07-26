@@ -1,12 +1,10 @@
 { pkgs-unstable, ... }: {
   services.scx = {
     enable = true;
-    scheduler = "scx_lavd";
+    scheduler = "scx_cake";
     package = pkgs-unstable.scx.full;
     extraArgs = [
-      "--performance"
-      "--pinned-slice-us 500"
-      "--no-core-compaction"
+      "--profile esports"
     ];
   };
 }

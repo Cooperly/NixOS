@@ -15,6 +15,9 @@
       extraEnv = {
         # Support for wivrn.
         PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES = "1";
+
+        PROTON_USE_NTSYNC = "1";
+        PROTON_DLSS_UPGRADE= "1";
       };
 
       extraLibraries = p: with p; [
