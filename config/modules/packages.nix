@@ -94,7 +94,7 @@ let
       blender
       tetrio-desktop
       vinegar
-      helium.helium
+      inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     custom = [
