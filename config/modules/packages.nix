@@ -50,6 +50,7 @@ let
       awww
       gnirehtet
       tmux
+      pkgs-unstable.spotiflac
     ];
 
     apps = [
@@ -93,6 +94,7 @@ let
       blender
       tetrio-desktop
       vinegar
+      helium.helium
     ];
 
     custom = [
