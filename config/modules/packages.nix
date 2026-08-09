@@ -1,4 +1,4 @@
-{ inputs, pkgs, pkgs-unstable, helium, ... }:
+{ inputs, pkgs, pkgs-unstable, ... }:
 let
   patch-nixpkgs = patches:
     import (pkgs.applyPatches {
@@ -51,6 +51,7 @@ let
       gnirehtet
       tmux
       pkgs-unstable.spotiflac
+      iotop-c
     ];
 
     apps = [
@@ -90,11 +91,12 @@ let
       losslesscut
       protonplus
       r2modman
-      chromium
       blender
       tetrio-desktop
       vinegar
       inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
+      inputs.fluxer.packages.${pkgs.stdenv.hostPlatform.system}.fluxer-canary
+      pkgs-unstable.eden
     ];
 
     custom = [

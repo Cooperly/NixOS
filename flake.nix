@@ -25,6 +25,13 @@
       url = "github:AlvaroParker/helium-nix";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    fluxer.url = "github:Hy4ri/fluxer-flake";
+
+    fluxer-rpc = {
+      url = "github:letruxux/fluxer-rpc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -63,7 +70,7 @@
           {
             nixpkgs.config = nixpkgs-options.config;
             nixpkgs.overlays = [ 
-                nix-cachyos-kernel.overlays.pinned 
+              nix-cachyos-kernel.overlays.pinned 
               dolphin-overlay.overlays.default 
             ];
           }
