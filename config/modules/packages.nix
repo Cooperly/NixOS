@@ -96,7 +96,6 @@ let
       vinegar
       inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.fluxer.packages.${pkgs.stdenv.hostPlatform.system}.fluxer-canary
-      pkgs-unstable.eden
     ];
 
     custom = [

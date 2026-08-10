@@ -75,12 +75,6 @@
         "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       ];
     };
-
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
   };
 
   nixpkgs.config.permittedInsecurePackages = [];
