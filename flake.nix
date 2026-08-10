@@ -27,11 +27,6 @@
     };
 
     fluxer.url = "github:Hy4ri/fluxer-flake";
-
-    eden = {
-    url = "github:Daaboulex/eden-nix";
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
   };
 
   outputs =
@@ -43,7 +38,6 @@
       stylix,
       dolphin-overlay,
       nix-cachyos-kernel,
-      eden,
       ...
     }@inputs:
     let
@@ -73,14 +67,12 @@
             nixpkgs.overlays = [ 
               nix-cachyos-kernel.overlays.pinned 
               dolphin-overlay.overlays.default 
-              eden.overlays.default
             ];
           }
 
           nix-flatpak.nixosModules.nix-flatpak
           stylix.nixosModules.stylix
           inputs.nixvim.nixosModules.nixvim
-          eden.nixosModules.default
 
           ./config/main.nix
         ];
