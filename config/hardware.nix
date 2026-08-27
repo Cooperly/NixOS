@@ -31,7 +31,7 @@ in {
       compressor = "lz4";
     };
 
-    kernel.sysctl = lib.mkIf (!config.systemd.coredump.enable) {
+    kernel.sysctl = {
       "kernel.core_pattern" = lib.mkForce " | ${pkgs.coreutils-full}/bin/false";
     };
   };
@@ -49,8 +49,8 @@ in {
       options = [ "fmask=0077" "dmask=0077" ];
     };
   
-  fileSystems."/mnt/Dash10" =
-    { device = "/dev/disk/by-uuid/4E62F85B62F8496B";
+  fileSystems."/mnt/Windwave" =
+    { device = "/dev/disk/by-uuid/10ACFFAEACFF8D0A";
       fsType = "ntfs";
       options = options.default ++ options.ntfs ++ [];
     };

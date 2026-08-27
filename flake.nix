@@ -6,10 +6,7 @@
     dolphin-overlay.url = "github:FUFSoB/dolphin-overlay"; # Change to https://github.com/rumboon/dolphin-overlay later
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
-    kopuz = { 
-      url = "github:temidaradev/kopuz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    kopuz.url = "github:temidaradev/kopuz";
     
     nixvim = {
       url = "github:nix-community/nixvim/nixos-26.05";
@@ -19,11 +16,6 @@
     stylix = {
       url = "github:nix-community/stylix/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    helium = {
-      url = "github:AlvaroParker/helium-nix";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     fluxer.url = "github:Hy4ri/fluxer-flake";

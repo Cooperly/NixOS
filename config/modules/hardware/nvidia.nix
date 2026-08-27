@@ -4,8 +4,7 @@
 
   hardware.nvidia = {
     package = config.boot.kernelPackages.nvidiaPackages.latest;
-    # Would love to use nvidia-open, but that requires a build from source while using Linux CachyOS.
-    open = false;
+    open = true;
     videoAcceleration = true;
     modesetting.enable = true;
     forceFullCompositionPipeline = false;

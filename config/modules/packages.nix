@@ -17,6 +17,9 @@ let
       pkgs-unstable.xwayland-satellite
       playerctl
       mangohud
+      wl-clipboard
+      cliphist
+      wl-clip-persist
     ];
 
     cli = [
@@ -44,6 +47,7 @@ let
       whois
       yt-dlp
       fastfetch
+      hyfetch
       python312Packages.speedtest-cli
       wineWow64Packages.full
       usb-modeswitch
@@ -81,7 +85,7 @@ let
       carla
       inputs.kopuz.packages.${pkgs.stdenv.hostPlatform.system}.default
       blockbench
-      pkgs-unstable.goofcord
+      goofcord
       pkgs-unstable.osu-lazer-bin 
       (pkgs-unstable.discord.override {
         withVencord = true; 
@@ -94,9 +98,9 @@ let
       blender
       tetrio-desktop
       vinegar
-      inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.fluxer.packages.${pkgs.stdenv.hostPlatform.system}.fluxer-canary
       pkgs-unstable.eden
+      hyprpolkitagent
     ];
 
     custom = [
@@ -114,7 +118,6 @@ let
       krdc
       kjournald
       partitionmanager
-      polkit-kde-agent-1
       knewstuff
       qt6ct
       qtstyleplugin-kvantum

@@ -22,7 +22,7 @@ alias ls='ls --color=auto -l'
 alias grep='grep --color=auto'
 alias neofetch="fastfetch"
 
-fastfetch
+hyfetch
 
 # function fish_prompt
 #   set_color cyan; echo (pwd)

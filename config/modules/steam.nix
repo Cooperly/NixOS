@@ -14,6 +14,8 @@
         # Support for wivrn.
         PRESSURE_VESSEL_IMPORT_OPENXR_1_RUNTIMES = "1";
 
+        OBS_VKCAPTURE = true;
+
         PROTON_USE_NTSYNC = "1";
         PROTON_DLSS_UPGRADE= "1";
       };

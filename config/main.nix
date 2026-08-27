@@ -33,6 +33,9 @@
     ./modules/ssh.nix
     ./modules/git.nix
 
+    # Comment this line out if you want to play mainland roblox.
+    # ./modules/kanvas.nix
+
     ./modules/programming/dotnet.nix
     ./modules/programming/java.nix
     ./modules/programming/kotlin.nix
@@ -49,8 +52,8 @@
     settings = {
       auto-optimise-store = true;
       download-buffer-size = 70000000;
-      download-speed = 200 * 1024; # 200 Mbps
-      cores = 4;
+      download-speed = 400 * 1024; # 400 Mbps (leaving 100Mbps headroom)
+      cores = 8;
 
       experimental-features = [
         "nix-command"

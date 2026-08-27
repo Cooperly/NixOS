@@ -19,9 +19,9 @@
         "context.properties" = {
           default.clock = {
             rate = 48000;
-            quantum = 1024;
-            min-quantum = 32;
-            max-quantum = 2048;
+            quantum = 256;
+            min-quantum = 64;
+            max-quantum = 512;
           };
         };
       };
@@ -33,6 +33,17 @@
               "factory.name" = "support.null-audio-sink";
               "node.name" = "output";
               "node.description" = "Output";
+              "media.class" = "Audio/Sink";
+              "audio.channels" = 2;
+              "audio.position" = "FL,FR";
+            };
+          }
+          {
+            factory = "adapter";
+            args = {
+              "factory.name" = "support.null-audio-sink";
+              "node.name" = "Media";
+              "node.description" = "Media";
               "media.class" = "Audio/Sink";
               "audio.channels" = 2;
               "audio.position" = "FL,FR";
@@ -54,7 +65,18 @@
             args = {
               "factory.name" = "support.null-audio-sink";
               "node.name" = "music";
-              "node.description" = "Music";
+              "node.description" = "Music (Personal)";
+              "media.class" = "Audio/Sink";
+              "audio.channels" = 2;
+              "audio.position" = "FL,FR";
+            };
+          }
+          {
+            factory = "adapter";
+            args = {
+              "factory.name" = "support.null-audio-sink";
+              "node.name" = "music2";
+              "node.description" = "Music (Stream)";
               "media.class" = "Audio/Sink";
               "audio.channels" = 2;
               "audio.position" = "FL,FR";
