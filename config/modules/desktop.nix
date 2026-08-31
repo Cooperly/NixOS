@@ -3,14 +3,6 @@
   programs.niri = {
     enable = true;
     useNautilus = true;
-
-    settings = {
-    spawn-at-startup = [
-        { command = ["wl-clip-persist" "--clipboard" "both"]; }
-        { command = ["sh" "-c" "wl-paste --type text --watch cliphist store"]; }
-        { command = ["sh" "-c" "wl-paste --type image --watch cliphist store"]; }
-      ];
-    };
   };
 
   systemd.user.services.niri.enableDefaultPath = false;

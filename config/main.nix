@@ -32,6 +32,7 @@
     ./modules/internationalization.nix
     ./modules/ssh.nix
     ./modules/git.nix
+    ./modules/syncthing.nix
 
     # Comment this line out if you want to play mainland roblox.
     # ./modules/kanvas.nix
@@ -91,6 +92,12 @@
     # 26.05 - bitwarden-desktop
     "electron"
   ];
+
+  nix = {
+    daemonCPUSchedPolicy = "idle";
+    daemonIOSchedClass = "idle";
+  };
+
 
   system.stateVersion = "25.11";
 }

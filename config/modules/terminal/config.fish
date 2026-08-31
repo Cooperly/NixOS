@@ -1,9 +1,52 @@
-function fish_prompt -d "Write out the prompt"
-    # This shows up as USER@HOST /home/user/ >, with the directory colored
-    # $USER and $hostname are set by fish, so you can just use them
-    # instead of using `whoami` and `hostname`
-    printf '%s@%s %s%s%s > ' $USER $hostname \
-        (set_color -b $fish_color_cwd) (prompt_pwd) (set_color normal)
+function fish_prompt
+    set -l protopurple '#d8c2f2'
+    set -l protolavender '#a893cf'
+    set -l protodark '#1d1a20'
+
+    set_color $protodark --background $protopurple
+    printf '  󰌽 %s' $USER
+
+    printf '@%s  ' (hostname -s)
+
+    set_color $protopurple --background $protolavender
+    printf ''
+
+    set_color $protodark --background $protolavender
+
+    set -l cwd (prompt_pwd)
+
+    set cwd (string replace -r '^~' '~' $PWD)
+
+    set cwd (string replace -a '/home/void' '/󰉌' $cwd)
+
+    set cwd (string replace -a '/mnt/ColdBoot' '/󰚝' $cwd)
+    set cwd (string replace -a '/mnt/Ace' '/󰉐' $cwd)
+    set cwd (string replace -a '/mnt/AceOS' '/󱧼' $cwd)
+    set cwd (string replace -a '/mnt/WindWave' '/󱃪' $cwd)
+
+    set cwd (string replace -a '/Git' '/' $cwd)
+    set cwd (string replace -a '/Documents' '/󱧶' $cwd)
+    set cwd (string replace -a '/Downloads' '/󰉍' $cwd)
+    set cwd (string replace -a '/Music' '/󱍙' $cwd)
+    set cwd (string replace -a '/Pictures' '/󰉏' $cwd)
+    set cwd (string replace -a '/Videos' '/󱧺' $cwd)
+    set cwd (string replace -a '/Desktop' '/󱞊' $cwd)
+
+    printf ' %s ' $cwd
+    printf ' '
+
+    set_color $protolavender --background $protodark
+
+    printf ''
+
+    set_color normal
+    printf '\n'
+    printf '\n'
+
+    set_color $protopurple
+
+    printf ' ❯ '
+    set_color normal
 end
 
 if status is-interactive

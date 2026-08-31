@@ -29,7 +29,7 @@
       gamescope
       mangohud
       gamemode
-      pkgs-unstable.steamvr-linux-fixes
+      # pkgs-unstable.steamvr-linux-fixes
     ];
 
     extraCompatPackages = with pkgs; [

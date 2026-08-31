@@ -5,6 +5,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     dolphin-overlay.url = "github:FUFSoB/dolphin-overlay"; # Change to https://github.com/rumboon/dolphin-overlay later
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    waybar-nixos-updates.url = "github:guttermonk/waybar-nixos-updates";
 
     kopuz.url = "github:temidaradev/kopuz";
     

@@ -20,6 +20,7 @@ let
       wl-clipboard
       cliphist
       wl-clip-persist
+      hyprpolkitagent
     ];
 
     cli = [
@@ -63,7 +64,6 @@ let
       alacritty
       bs-manager
       gimp
-      # obsidian
       pavucontrol
       (prismlauncher.override {
         additionalLibs = [ libxcomposite ];
@@ -83,7 +83,6 @@ let
       libsForQt5.qt5ct
       aseprite
       carla
-      inputs.kopuz.packages.${pkgs.stdenv.hostPlatform.system}.default
       blockbench
       goofcord
       pkgs-unstable.osu-lazer-bin 
@@ -98,9 +97,13 @@ let
       blender
       tetrio-desktop
       vinegar
-      inputs.fluxer.packages.${pkgs.stdenv.hostPlatform.system}.fluxer-canary
       pkgs-unstable.eden
-      hyprpolkitagent
+    ];
+
+    special = [
+      inputs.waybar-nixos-updates.packages.${system}.default
+      inputs.fluxer.packages.${pkgs.stdenv.hostPlatform.system}.fluxer-canary
+      inputs.kopuz.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
 
     custom = [
@@ -130,6 +133,7 @@ in {
     ++ packages.misc
     ++ packages.cli
     ++ packages.apps
+    ++ packages.special
     ++ packages.custom
     ++ packages.kde;
 

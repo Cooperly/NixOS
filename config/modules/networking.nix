@@ -21,14 +21,17 @@
     firewall = {
       # Steam ports specified manually, as otherwise my system will lose networking when Steam opens.
       allowedTCPPorts = [
+        22000 # SyncThing Transfer
         27015 # Steam SRCDS Rcon port
-        27036 # Steam Client Discovery (Local Transfers)
+        27036 # Steam Local Transfers
         27037 # Steam Remote Play
         27040 # Steam Local Transfers
       ];
       allowedUDPPorts = [
         10400 # Steam Remote Play
         10401 # Steam Remote Play
+        22000 # Syncthing Transfer
+        21027 # Syncthing Discovery
         27015 # Steam Game Server
         27031 # Steam Remote Play
         27032 # Steam Remote Play
