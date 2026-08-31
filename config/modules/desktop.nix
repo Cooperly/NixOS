@@ -13,7 +13,7 @@
       settings = {
         default_session = {
           command = "${config.programs.niri.package}/bin/niri-session";
-          user = "void"; # Replace with your actual username
+          user = "void";
         };
       };
     };

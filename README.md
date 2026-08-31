@@ -1,0 +1,1 @@
+# void's NixOS config
